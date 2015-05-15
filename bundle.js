@@ -9232,4 +9232,6 @@ console.log('AQUI');
       });
     });
 })();
+
+$('a').attr('href', 'https://github.com/bfrgoncalves/test_gh_pages');
 },{"jquery":1}]},{},[2]);
