@@ -1,5 +1,7 @@
 var $ = require('jquery');
 
+console.log('AQUI');
+
 
 $.ajax({
             url: "http://rest.pubmlst.org/db/pubmlst_spneumoniae_isolates/isolates/9",
