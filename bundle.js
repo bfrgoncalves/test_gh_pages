@@ -9216,7 +9216,20 @@ var $ = require('jquery');
 console.log('AQUI');
 
 
-$.getJSON('http://rest.pubmlst.org/db/pubmlst_spneumoniae_isolates/isolates/9', function(d){
-	console.log(d);
-});
+(function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "mount rainier",
+    tagmode: "any",
+    format: "json"
+  })
+    .done(function( data ) {
+      $.each( data.items, function( i, item ) {
+        $( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+        if ( i === 3 ) {
+          return false;
+        }
+      });
+    });
+})();
 },{"jquery":1}]},{},[2]);
